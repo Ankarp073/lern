@@ -1,7 +1,20 @@
 from django import forms
-from  .models import *
+from .models import *
+from django.contrib.auth.forms import UserCreationForm
+
 
 class ArticleForm(forms.ModelForm):
     class Meta:
         model = Article
         fields = ['title', 'text']
+
+
+class CustomUserCreationForm(UserCreationForm):
+    birth_date = forms.DateField(
+        widget=forms.DateInput(attrs={'type': 'date'}),
+        help_text='Выберите дату рождения',
+    )
+
+    class Meta:
+        model = CustomUser
+        fields = ['full_name', 'birth_date', 'username', 'password1', 'password2']
