@@ -4,7 +4,8 @@ from django.urls import reverse_lazy
 from .forms import ArticleForm, CustomUserCreationForm
 from django.views.generic import TemplateView, ListView, DetailView, CreateView
 from .models import *
-from django.contrib.auth.models import User
+from django.utils.decorators import method_decorator
+from django.contrib.auth.decorators import login_required
 
 
 class HomeView(TemplateView):
@@ -65,3 +66,17 @@ class UserCreateView(CreateView):
         user.save()
         login(self.request, user)
         return super().form_valid(form)
+
+
+class ProfileView(TemplateView):
+    template_name = 'class_app2/profile.html'
+
+    @method_decorator(login_required)
+    def dispatch(self, *args, **kwargs):
+        return super().dispatch(*args, **kwargs)
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['user'] = self.request.user
+        return context
+

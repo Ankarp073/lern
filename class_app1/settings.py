@@ -37,7 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'class_app2'
+    'class_app2',
+
 ]
 
 MIDDLEWARE = [
@@ -55,7 +56,7 @@ ROOT_URLCONF = 'class_app1.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR / 'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -87,6 +88,7 @@ DATABASES = {
 
 
 AUTH_USER_MODEL = 'class_app2.CustomUser'
+LOGOUT_REDIRECT_URL = 'login'
 
 
 AUTH_PASSWORD_VALIDATORS = [

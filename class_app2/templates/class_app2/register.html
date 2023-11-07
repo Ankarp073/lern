@@ -1,10 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+  {% extends 'base.html' %}
+  {% block content %}
     <h1>Регистрация нового пользователя</h1>
     <form method="post">
       {% csrf_token %}
@@ -28,8 +23,7 @@
       {{ form.password2.label }}
       {{ form.password2 }}
       </div>
-      <button type="submit">Зарегистрировать нового пользователя</button>
+      <button type="button" class="btn btn-warning">Зарегистрировать нового пользователя</button>
     </form>
 
-</body>
-</html>
+  {% endblock %}

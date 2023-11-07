@@ -1,4 +1,4 @@
-from django.contrib.auth.views import LoginView
+from django.contrib.auth.views import LoginView, LogoutView
 from django.urls import path, include
 from .views import *
 
@@ -8,6 +8,8 @@ urlpatterns = [
     path('articles/<int:pk>', ArticleDetailView.as_view(), name='article_detail'),
     path('create_articles/', ArticleCreateView.as_view(), name='create_article'),
     path('register/', UserCreateView.as_view(), name='register'),
-    path('login/', LoginView.as_view(), name='login')
+    path('login/', LoginView.as_view(), name='login'),
+    path('logout/', LogoutView.as_view(), name='logout'),
+    path('accounts/profile/', ProfileView.as_view(), name='profile'),
 
 ]
