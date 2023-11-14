@@ -1,4 +1,27 @@
 {% extends "base.html" %}
 {% block content %}
-    content
+<section class="hero vh-100">
+<div class="container d-flex align-items-center h-75">
+    <div class="col-12 col-md-8 col-lg-5 ps-0 ps-md-2 ps-lg-4">
+        <h1 class="mb-2">The companion app for your book shelf</h1>
+        <a href="{% url 'register' %}" class="w-100 w-md-50 w-lg-75 btn btn-dark">Create your account</a>
+        <p>Already a member?<a href="{% url 'login' %}">Sign in</a></p>
+    </div>
+</div>
+</section>
+
+
+<section class="Meet the team">
+<div class="container d-flex align-items-center h-75">
+    <div class="col-10 col-md-8 col-lg-5 ps-0 ps-md-2 ps-lg-4">
+        <h1 class="mb-2">TMeet the team</h1>
+        <a class="w-100 w-md-50 w-lg-75 btn btn-dark"></a>
+        <p>HGhkjsdvnrjg fl .ewf gagihgnv anlianlirglfgwn gngingnrgnjangrngajkngnagrgn
+            ghseriu iuelhguirelgeurgh ighiuergioerhjgio; e;oirehgiorioghyreio
+            kd ghkghihg ghiregh;ohgiorgh;ogjh irjhjeigahjroae hjjotjh oejjkjj
+            <a href="{% url 'login' %}">Sign in</a></p>
+    </div>
+</div>
+</section>
+
 {% endblock content %}
